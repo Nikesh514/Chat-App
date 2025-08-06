@@ -1,7 +1,7 @@
 import React from 'react'
 import './chat.css'
 
-const Chat = () => {
+export const Chat = () => {
   return (
     <div>
       We are on the chat page
@@ -9,4 +9,3 @@ const Chat = () => {
   )
 }
 
-export default Chat
