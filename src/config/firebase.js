@@ -3,9 +3,10 @@ import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { setDoc, getFirestore } from "firebase/firestore/lite";
 import { toast } from "react-toastify";
+import "dotenv/config";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDHmdku7mI_O5vFZq4K6_v_9D7dSiTFO-o",
+  apiKey: process.env.FIREBASE_API_KEY,
   authDomain: "chat-app-gs-e3cf4.firebaseapp.com",
   projectId: "chat-app-gs-e3cf4",
   storageBucket: "chat-app-gs-e3cf4.firebasestorage.app",
