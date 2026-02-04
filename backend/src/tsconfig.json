@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig to read more about this file */
+
+    /* Basic Options */
+    "target": "ES2020",                                // Specify ECMAScript target version
+    "module": "CommonJS",                              // Specify module code generation
+    "lib": ["ES2020"],                                 // Specify library files to include in the compilation
+    "strict": true,                                    // Enable all strict type-checking options
+    "esModuleInterop": true,                           // Emit additional JS interop code for CommonJS modules
+    "skipLibCheck": true,                              // Skip type checking of declaration files
+    "forceConsistentCasingInFileNames": true,          // Ensure consistent casing in file imports
+
+    /* Module Resolution Options */
+    "moduleResolution": "node",                       // Use Node.js module resolution
+    "resolveJsonModule": true,                        // Enable importing .json files
+    "baseUrl": "./",                                  // Base directory for non-relative module imports
+    "paths": {                                        // Aliases for module imports
+      "@/*": ["src/*"]
+    },
+
+    /* JavaScript Support */
+    "allowJs": true,                                  // Allow JavaScript files in the project
+    "checkJs": false,                                 // Disable type checking for JavaScript files
+
+    /* Emit Options */
+    "outDir": "./dist",                               // Redirect output structure to the 'dist' folder
+    "sourceMap": true,                                // Generate source map files
+    "removeComments": true,                           // Remove comments in the output
+
+    /* Type Checking */
+    "noImplicitAny": true,                            // Raise error on expressions and declarations with an implied 'any' type
+    "strictNullChecks": true,                         // Enable strict null checks
+    "noUnusedLocals": true,                           // Report errors on unused local variables
+    "noUnusedParameters": true,                       // Report errors on unused parameters
+    "noImplicitReturns": true,                        // Report errors for functions that don't return a value
+    "noFallthroughCasesInSwitch": true                // Report errors for fallthrough cases in switch statements
+  },
+  "include": ["**/*"], // Include all TypeScript files relative to the current directory
+  "exclude": ["node_modules", "dist", "**/*.test.ts"] // Exclude 'node_modules', 'dist', and test files
+}
