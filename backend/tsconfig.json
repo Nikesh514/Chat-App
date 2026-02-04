@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    // ...existing code...
+  },
+  "include": ["./src/**/*"], // Adjusted to ensure the path is relative to the tsconfig.json file
+  "exclude": ["node_modules", "dist", "**/*.test.ts"] // Exclude 'node_modules', 'dist', and test files
+}
