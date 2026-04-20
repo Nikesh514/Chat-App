@@ -1,14 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import 'tailwindcss';
 
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: Poppins;
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Light: soft sky / ice blue. Dark: near-black neutrals with a clean blue accent. */
+@theme {
+  --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --color-surface: oklch(0.985 0.018 240);
+  --color-surface-elevated: oklch(0.998 0.012 235);
+  --color-surface-muted: oklch(0.955 0.035 235);
+  --color-border: oklch(0.895 0.04 235);
+  --color-text: oklch(0.28 0.045 255);
+  --color-text-muted: oklch(0.46 0.055 250);
+  --color-primary: oklch(0.58 0.11 245);
+  --color-primary-hover: oklch(0.52 0.13 245);
+  --color-primary-foreground: oklch(0.99 0.01 240);
+  --shadow-soft: 0 12px 40px -14px oklch(0.45 0.12 250 / 0.14);
+  --shadow-card: 0 4px 20px -4px oklch(0.45 0.1 250 / 0.1);
 }
-::-webkit-scrollbar {
-  display: none;
-}
-img.dot{
-  width: 15px !important ;
+
+@layer base {
+  html {
+    @apply scroll-smooth antialiased;
+  }
+
+  body {
+    @apply m-0 min-h-svh bg-surface font-sans text-text;
+  }
+
+  .dark {
+    --color-surface: oklch(0.07 0.004 260);
+    --color-surface-elevated: oklch(0.1 0.005 260);
+    --color-surface-muted: oklch(0.14 0.008 260);
+    --color-border: oklch(0.22 0.01 260);
+    --color-text: oklch(0.96 0.006 260);
+    --color-text-muted: oklch(0.58 0.012 260);
+    --color-primary: oklch(0.62 0.14 245);
+    --color-primary-hover: oklch(0.68 0.14 245);
+    --color-primary-foreground: oklch(0.99 0.01 240);
+    --shadow-soft: 0 12px 48px -10px oklch(0 0 0 / 0.55);
+    --shadow-card: 0 4px 24px -4px oklch(0 0 0 / 0.4);
+  }
+
+  #root {
+    @apply min-h-svh;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
 }
